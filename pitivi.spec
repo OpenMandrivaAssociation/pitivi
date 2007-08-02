@@ -10,8 +10,9 @@ License: GPL
 Group: Video
 URL: http://www.pitivi.org
 BuildRequires:  python-devel
-BuildRequires: ImageMagick
-BuildRequires: desktop-file-utils
+BuildRequires:  ImageMagick
+BuildRequires:  desktop-file-utils
+BuildRequires:  perl-XML-Parser
 Requires:  pygtk2.0-libglade
 Requires:  gnome-python
 Requires:  gnome-python-gnomevfs
