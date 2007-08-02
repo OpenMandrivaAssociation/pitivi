@@ -4,22 +4,17 @@
 Summary: Pitivi non linear video editor under linux 
 Name: %name
 Version: 0.10.3
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: http://download.gnome.org/sources/pitivi/%{name}-%{version}.tar.bz2
 License: GPL
 Group: Video
 URL: http://www.pitivi.org
-BuildRequires:  pygtk2.0-devel
-BuildRequires:  pygtk2.0-libglade
-BuildRequires:  gnome-python
-BuildRequires:  gnome-python-gnomevfs
-BuildRequires:  gstreamer0.10-python >= 0.10
-BuildRequires:  libgstreamer-devel >= 0.10
-BuildRequires: gnonlin >= %gnonlin
+BuildRequires:  python-devel
 BuildRequires: ImageMagick
 BuildRequires: desktop-file-utils
 Requires:  pygtk2.0-libglade
 Requires:  gnome-python
+Requires:  gnome-python-gnomevfs
 Requires:  gstreamer0.10-python
 Requires:  gstreamer0.10-plugins-base
 Requires:  gnonlin >= %gnonlin
