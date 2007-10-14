@@ -3,9 +3,10 @@
 %define gnonlin 0.10.6.1
 Summary: Pitivi non linear video editor under linux 
 Name: %name
-Version: 0.10.3
-Release: %mkrel 2
+Version: 0.11.0
+Release: %mkrel 1
 Source0: http://download.gnome.org/sources/pitivi/%{name}-%{version}.tar.bz2
+Patch: pitivi-0.11.0-desktopentry.patch
 License: GPL
 Group: Video
 URL: http://www.pitivi.org
@@ -30,6 +31,7 @@ framework.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 ./configure --prefix=%_prefix --libdir=%pitividir
@@ -43,11 +45,6 @@ mkdir -p $RPM_BUILD_ROOT%{_menudir}
 cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name} 
 ?package(%{name}): command="%name" icon="%name.png" longtitle="Non-linear video editor" title="Pitivi" needs=x11 section="Multimedia/Video" xdg="true"
 EOF
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="X-MandrivaLinux-Multimedia-Video" \
-  --add-category="Video;AudioVideoEditing" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 mkdir -p %buildroot/{%_liconsdir,%_miconsdir,%_iconsdir} 
 install pitivi/pixmaps/pitivi-video.png %buildroot/%_liconsdir/%name.png
