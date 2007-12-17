@@ -21,7 +21,6 @@ Requires:  gstreamer0.10-python
 Requires:  gstreamer0.10-plugins-base
 Requires:  gnonlin >= %gnonlin
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
 
 %description
