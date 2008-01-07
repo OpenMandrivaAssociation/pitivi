@@ -4,7 +4,7 @@
 Summary: Pitivi non linear video editor under linux 
 Name: %name
 Version: 0.11.1
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: http://download.gnome.org/sources/pitivi/%{name}-%{version}.tar.bz2
 Patch: pitivi-0.11.0-desktopentry.patch
 License: GPL
@@ -14,6 +14,7 @@ BuildRequires:  python-devel
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  perl-XML-Parser
+Requires:  python-zope-interface
 Requires:  pygtk2.0-libglade
 Requires:  gnome-python
 Requires:  gnome-python-gnomevfs
