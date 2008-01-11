@@ -43,10 +43,6 @@ framework.
 rm -rf $RPM_BUILD_ROOT %name.lang
 %makeinstall_std
 %find_lang %name
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name} 
-?package(%{name}): command="%name" icon="%name.png" longtitle="Non-linear video editor" title="Pitivi" needs=x11 section="Multimedia/Video" xdg="true"
-EOF
 
 mkdir -p %buildroot/{%_liconsdir,%_miconsdir,%_iconsdir} 
 install pitivi/pixmaps/pitivi-video.png %buildroot/%_liconsdir/%name.png
@@ -66,7 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS  ChangeLog NEWS RELEASE
 %{_datadir}/pitivi/
 %{_bindir}/pitivi
-%_menudir/%name
 %_datadir/applications/%name.desktop
 %_datadir/pixmaps/%name.png
 %pitividir/pitivi/
