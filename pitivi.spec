@@ -13,7 +13,7 @@ URL: http://www.pitivi.org
 BuildRequires:  python-devel
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
-BuildRequires:  perl-XML-Parser
+BuildRequires:  intltool
 Requires:  python-zope-interface
 Requires:  python-setuptools
 Requires:  pygtk2.0-libglade
