@@ -3,11 +3,11 @@
 %define gnonlin 0.10.6.1
 Summary: Pitivi non linear video editor under linux 
 Name: %name
-Version: 0.11.1
-Release: %mkrel 6
+Version: 0.11.1.4
+Release: %mkrel 1
 Source0: http://download.gnome.org/sources/pitivi/%{name}-%{version}.tar.bz2
 Patch: pitivi-0.11.0-desktopentry.patch
-License: GPL
+License: LGPLv2+
 Group: Video
 URL: http://www.pitivi.org
 BuildRequires:  python-devel
