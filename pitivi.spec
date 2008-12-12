@@ -1,16 +1,16 @@
 %define name pitivi
 %define pitividir %_prefix/lib
-%define gnonlin 0.10.6.1
+%define gnonlin 0.10.10
 Summary: Pitivi non linear video editor under linux 
 Name: %name
-Version: 0.11.2.2
+Version: 0.11.3
 Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/devhelp/%{name}-%{version}.tar.bz2
 Patch: pitivi-0.11.0-desktopentry.patch
 License: LGPLv2+
 Group: Video
 URL: http://www.pitivi.org
-BuildRequires:  python-devel
+%py_requires -d
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
@@ -73,5 +73,3 @@ rm -rf $RPM_BUILD_ROOT
 %_liconsdir/*png
 %_iconsdir/*png
 %_miconsdir/*png
-
-
