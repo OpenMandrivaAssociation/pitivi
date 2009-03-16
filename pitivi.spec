@@ -4,9 +4,12 @@
 Summary: Pitivi non linear video editor under linux 
 Name: %name
 Version: 0.11.3
-Release: %mkrel 2
+Release: %mkrel 3
 Source0: http://ftp.gnome.org/pub/GNOME/sources/devhelp/%{name}-%{version}.tar.bz2
 Patch: pitivi-0.11.0-desktopentry.patch
+#gw fix syntax error reported here:
+# https://qa.mandriva.com/show_bug.cgi?id=48312
+Patch1: pitivi-0.11.3-fix-syntax-error.patch
 License: LGPLv2+
 Group: Video
 URL: http://www.pitivi.org
@@ -35,6 +38,7 @@ framework.
 %prep
 %setup -q
 %patch -p1
+%patch1 -p1
 
 %build
 ./configure --prefix=%_prefix --libdir=%pitividir
