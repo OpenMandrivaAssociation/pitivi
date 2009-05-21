@@ -3,14 +3,11 @@
 %define gnonlin 0.10.10
 Summary: Pitivi non linear video editor under linux 
 Name: %name
-Version: 0.11.3
-Release: %mkrel 3
+Version: 0.13.0.2
+Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 
-Patch: pitivi-0.11.0-desktopentry.patch
-#gw fix syntax error reported here:
-# https://qa.mandriva.com/show_bug.cgi?id=48312
-Patch1: pitivi-0.11.3-fix-syntax-error.patch
+Patch: pitivi-0.13.0.2-desktopentry.patch
 License: LGPLv2+
 Group: Video
 URL: http://www.pitivi.org
@@ -39,7 +36,6 @@ framework.
 %prep
 %setup -q
 %patch -p1
-%patch1 -p1
 
 %build
 ./configure --prefix=%_prefix --libdir=%pitividir
@@ -61,10 +57,14 @@ rm -rf $RPM_BUILD_ROOT
 %if %mdkversion < 200900
 %post 
 %update_menus
-%endif
-%if %mdkversion < 200900
+%update_mime_database
+%update_desktop_database
+%update_icon_cache hicolor
 %postun
 %clean_menus
+%clean_mime_database
+%clean_desktop_database
+%clean_icon_cache hicolor
 %endif
 
 %files -f %name.lang
@@ -74,6 +74,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/pitivi
 %_datadir/applications/%name.desktop
 %_datadir/pixmaps/%name.png
+%_datadir/icons/hicolor/*/apps/*
+%_datadir/mime/packages/%name.xml
 %pitividir/pitivi/
 %_liconsdir/*png
 %_iconsdir/*png
