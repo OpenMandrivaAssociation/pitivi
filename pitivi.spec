@@ -1,13 +1,13 @@
 %define name pitivi
 %define pitividir %_prefix/lib
-%define gnonlin 0.10.10
+%define gnonlin 0.10.11
 Summary: Pitivi non linear video editor under linux 
 Name: %name
-Version: 0.13.0.2
+Version: 0.13.0.3
 Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 
-Patch: pitivi-0.13.0.2-desktopentry.patch
+Patch: pitivi-0.13.0.3-desktopentry.patch
 License: LGPLv2+
 Group: Video
 URL: http://www.pitivi.org
