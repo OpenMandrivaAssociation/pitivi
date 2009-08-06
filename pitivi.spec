@@ -4,7 +4,7 @@
 Summary: Pitivi non linear video editor under linux 
 Name: %name
 Version: 0.13.1.3
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 
 Patch: pitivi-0.13.0.3-desktopentry.patch
