@@ -1,6 +1,6 @@
 %define name pitivi
 %define pitividir %_prefix/lib
-%define gnonlin 0.10.11
+%define gnonlin 0.10.11.3
 Summary: Pitivi non linear video editor under linux 
 Name: %name
 Version: 0.13.1.3
@@ -20,8 +20,8 @@ Requires:  python-pkg-resources
 Requires:  pygtk2.0-libglade
 Requires:  gnome-python
 Requires:  gnome-python-gnomevfs
-Requires:  gstreamer0.10-python
-Requires:  gstreamer0.10-plugins-base
+Requires:  gstreamer0.10-python >= 0.10.16
+Requires:  gstreamer0.10-plugins-base >= 0.10.24
 Requires:  gnonlin >= %gnonlin
 Requires:  python-pygoocanvas
 
