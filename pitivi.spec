@@ -1,18 +1,16 @@
 %define name pitivi
 %define pitividir %_prefix/lib
-%define gnonlin 0.10.11.3
+%define gnonlin 0.10.13
 Summary: Pitivi non linear video editor under linux 
 Name: %name
-Version: 0.13.2
+Version: 0.13.3
 Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 
-Patch: pitivi-0.13.0.3-desktopentry.patch
 License: LGPLv2+
 Group: Video
 URL: http://www.pitivi.org
 %py_requires -d
-BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
 Requires:  python-zope-interface
@@ -24,6 +22,17 @@ Requires:  gstreamer0.10-python >= 0.10.16
 Requires:  gstreamer0.10-plugins-base >= 0.10.24
 Requires:  gnonlin >= %gnonlin
 Requires:  python-pygoocanvas
+#gw for make check
+#BuildRequires:  x11-server-xvfb
+#BuildRequires:  python-zope-interface
+#BuildRequires:  python-pkg-resources
+#BuildRequires:  pygtk2.0-libglade
+#BuildRequires:  gnome-python
+#BuildRequires:  gnome-python-gnomevfs
+#BuildRequires:  gstreamer0.10-python >= 0.10.16
+#BuildRequires:  gstreamer0.10-plugins-base >= 0.10.24
+#BuildRequires:  gnonlin >= %gnonlin
+#BuildRequires:  python-pygoocanvas
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
@@ -35,7 +44,6 @@ framework.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 ./configure --prefix=%_prefix --libdir=%pitividir
@@ -46,10 +54,10 @@ rm -rf $RPM_BUILD_ROOT %name.lang
 %makeinstall_std
 %find_lang %name
 
-mkdir -p %buildroot/{%_liconsdir,%_miconsdir,%_iconsdir} 
-install pitivi/pixmaps/pitivi-video.png %buildroot/%_liconsdir/%name.png
-convert -scale 32 pitivi/pixmaps/pitivi-video.png %buildroot/%_iconsdir/%name.png
-convert -scale 16 pitivi/pixmaps/pitivi-video.png %buildroot/%_miconsdir/%name.png
+%check
+#gw it currently needs an installed pitivi
+#https://bugzilla.gnome.org/show_bug.cgi?id=594985
+#xfvb-run make check
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -73,10 +81,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pitivi/
 %{_bindir}/pitivi
 %_datadir/applications/%name.desktop
-%_datadir/pixmaps/%name.png
 %_datadir/icons/hicolor/*/apps/*
 %_datadir/mime/packages/%name.xml
 %pitividir/pitivi/
-%_liconsdir/*png
-%_iconsdir/*png
-%_miconsdir/*png
