@@ -3,8 +3,8 @@
 %define gnonlin 0.10.13
 Summary: Pitivi non linear video editor under linux 
 Name: %name
-Version: 0.13.4
-Release: %mkrel 2
+Version: 0.13.4.2
+Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 
 License: LGPLv2+
