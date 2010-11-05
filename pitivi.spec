@@ -1,16 +1,17 @@
 %define name pitivi
 %define pitividir %_prefix/lib
-%define gnonlin 0.10.13
+%define gnonlin 0.10.16
+%define gstpy 0.10.19
 Summary: Pitivi non linear video editor under linux 
 Name: %name
 Version: 0.13.5
-Release: %mkrel 2
+Release: %mkrel 3
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 
 License: LGPLv2+
 Group: Video
 URL: http://www.pitivi.org
-%py_requires -d
+BuildRequires:	python-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
 Requires:  python-zope-interface
@@ -18,7 +19,7 @@ Requires:  python-pkg-resources
 Requires:  pygtk2.0-libglade
 Requires:  gnome-python
 Requires:  gnome-python-gnomevfs
-Requires:  gstreamer0.10-python >= 0.10.16
+Requires:  gstreamer0.10-python >= %gstpy
 Requires:  gstreamer0.10-plugins-base >= 0.10.24
 Requires:  gnonlin >= %gnonlin
 Requires:  python-pygoocanvas
@@ -30,11 +31,14 @@ Requires:  python-dbus
 #BuildRequires:  pygtk2.0-libglade
 #BuildRequires:  gnome-python
 #BuildRequires:  gnome-python-gnomevfs
-#BuildRequires:  gstreamer0.10-python >= 0.10.16
+#BuildRequires:  gstreamer0.10-python >= %gstpy
 #BuildRequires:  gstreamer0.10-plugins-base >= 0.10.24
 #BuildRequires:  gnonlin >= %gnonlin
 #BuildRequires:  python-pygoocanvas
-
+Suggests:  gstreamer0.10-plugins-good
+Suggests:  gstreamer0.10-plugins-bad
+Suggests:  gstreamer0.10-plugins-ugly
+Suggests:  gstreamer0.10-plugin-ffmpeg
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
 
