@@ -5,7 +5,7 @@
 Summary: Pitivi non linear video editor under linux 
 Name: %name
 Version: 0.13.5
-Release: %mkrel 4
+Release: %mkrel 5
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 Patch0: 0001-multiple-canvas-fixes-for-0.13.5.patch
 
