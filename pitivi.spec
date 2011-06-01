@@ -4,11 +4,9 @@
 %define gstpy 0.10.19
 Summary: Pitivi non linear video editor under linux 
 Name: %name
-Version: 0.13.5
-Release: %mkrel 5
-Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
-Patch0: 0001-multiple-canvas-fixes-for-0.13.5.patch
-
+Version: 0.14.0
+Release: %mkrel 1
+Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 License: LGPLv2+
 Group: Video
 URL: http://www.pitivi.org
@@ -87,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS  ChangeLog NEWS RELEASE
 %{_datadir}/pitivi/
 %{_bindir}/pitivi
+%_mandir/man1/%name.1*
 %_datadir/applications/%name.desktop
 %_datadir/icons/hicolor/*/apps/*
 %_datadir/mime/packages/%name.xml
