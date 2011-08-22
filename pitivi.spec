@@ -5,7 +5,7 @@
 Summary: Pitivi non linear video editor under linux 
 Name: %name
 Version: 0.14.2
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 License: LGPLv2+
 Group: Video
@@ -24,6 +24,7 @@ Requires:  gstreamer0.10-plugins-base >= 0.10.24
 Requires:  gnonlin >= %gnonlin
 Requires:  python-pygoocanvas
 Requires:  python-dbus
+Requires:  pyxdg
 #gw for make check
 #BuildRequires:  x11-server-xvfb
 #BuildRequires:  python-zope-interface
