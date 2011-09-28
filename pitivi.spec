@@ -4,7 +4,7 @@
 %define gstpy 0.10.19
 Summary: Pitivi non linear video editor under linux 
 Name: %name
-Version: 0.14.91
+Version: 0.15.0
 Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 License: LGPLv2+
