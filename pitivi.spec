@@ -7,7 +7,6 @@ Name: %name
 Version: 0.15.1
 Release: %mkrel 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
-Patch0: pitivi-0.15.0-l10n-ru.patch
 License: LGPLv2+
 Group: Video
 URL: http://www.pitivi.org
