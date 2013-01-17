@@ -13,7 +13,7 @@ URL: http://www.pitivi.org
 BuildRequires:	python-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  intltool
-BuildRequires:  gnome-doc-utils
+BuildRequires:  pkgconfig(gnome-doc-utils)
 Requires:  python-zope-interface
 Requires:  python-pkg-resources
 Requires:  pygtk2.0-libglade
