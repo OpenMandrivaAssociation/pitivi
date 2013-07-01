@@ -2,7 +2,7 @@
 %define pitividir %_prefix/lib
 %define gnonlin 0.10.16
 %define gstpy 0.10.19
-Summary: Pitivi non linear video editor under linux 
+Summary: Non linear video editor under linux 
 Name: %name
 Version: 0.15.1
 Release: %mkrel 1
