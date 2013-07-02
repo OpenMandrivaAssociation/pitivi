@@ -5,7 +5,7 @@
 Summary: Non linear video editor under linux 
 Name: %name
 Version: 0.15.1
-Release: %mkrel 1
+Release: 2
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 License: LGPLv2+
 Group: Video
@@ -40,7 +40,6 @@ Suggests:  gstreamer0.10-plugins-good
 Suggests:  gstreamer0.10-plugins-bad
 Suggests:  gstreamer0.10-plugins-ugly
 Suggests:  gstreamer0.10-plugin-ffmpeg
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch: noarch
 
 %description
@@ -67,7 +66,6 @@ rm -rf %{buildroot} %name.lang
 #xfvb-run make check
 
 %clean
-rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post 
