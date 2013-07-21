@@ -1,11 +1,10 @@
-%define name pitivi
 %define pitividir %_prefix/lib
 %define gnonlin 0.10.16
 %define gstpy 0.10.19
 Summary: Non linear video editor under linux 
-Name: %name
-Version: 0.15.1
-Release: 2
+Name:    pitivi
+Version: 0.15.2
+Release: 1
 Source0: http://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.xz
 License: LGPLv2+
 Group: Video
