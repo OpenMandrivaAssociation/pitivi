@@ -39,6 +39,10 @@ framework.
 %setup -q
 %apply_patches
 
+# install python files to %%python_sitelib/pitivi
+find . -name Makefile.am -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkgpythondir)|g' {} \;
+find . -name Makefile.in -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkgpythondir)|g' {} \;
+
 %build
 ./configure --prefix=%{_prefix} --libdir=%{pitividir}
 %make
