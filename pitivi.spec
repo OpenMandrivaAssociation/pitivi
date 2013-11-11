@@ -10,7 +10,6 @@ License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
-BuildArch:	noarch
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(pycairo)
 BuildRequires:	pkgconfig(cairo)
