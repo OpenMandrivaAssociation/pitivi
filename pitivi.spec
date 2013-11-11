@@ -1,44 +1,31 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 %define pitividir %{_prefix}/lib
-%define gnonlin	0.10.16
-%define gstpy	0.10.19
-%define gstapi	0.10
+%define gstapi	1.0
 
 Summary:	Non linear video editor under linux 
 Name:		pitivi
-Version:	0.15.2
+Version:	0.92
 Release:	1
 License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
 BuildArch:	noarch
+BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(pycairo)
+BuildRequires:	pkgconfig(cairo)
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
-BuildRequires:	pkgconfig(gnome-doc-utils)
-BuildRequires:	pkgconfig(python)
-Requires:	python-zope-interface
-Requires:	python-pkg-resources
-Requires:	pygtk2.0-libglade
-Requires:	gnome-python
-Requires:	gnome-python-gnomevfs
-Requires:	gstreamer%{gstapi}-python >= %{gstpy}
-Requires:	gstreamer%{gstapi}-plugins-base >= 0.10.24
-Requires:	gnonlin >= %{gnonlin}
-Requires:	python-pygoocanvas
+BuildRequires:	itstool
+BuildRequires:	libxml2-utils
+Requires:	python-gi >= 2.90.2
+Requires:	python-gi-cairo
+Requires:	frei0r
 Requires:	python-dbus
-Requires:	pyxdg
-#gw for make check
-#BuildRequires:	x11-server-xvfb
-#BuildRequires:	python-zope-interface
-#BuildRequires:	python-pkg-resources
-#BuildRequires:	pygtk2.0-libglade
-#BuildRequires:	gnome-python
-#BuildRequires:	gnome-python-gnomevfs
-#BuildRequires:	gstreamer%{gstapi}-python >= %{gstpy}
-#BuildRequires:	gstreamer%{gstapi}-plugins-base >= 0.10.24
-#BuildRequires:	gnonlin >= %{gnonlin}
-#BuildRequires:	python-pygoocanvas
+Requires:	xdg-utils
+Requires:	gnonlin >= 1.1.90
+Requires:	gstreamer%{gstapi}-python
+Suggests:	gstreamer%{gstapi}-libav
 Suggests:	gstreamer%{gstapi}-plugins-good
 Suggests:	gstreamer%{gstapi}-plugins-bad
 Suggests:	gstreamer%{gstapi}-plugins-ugly
@@ -66,12 +53,12 @@ framework.
 #xfvb-run make check
 
 %files -f %{name}.lang
-%doc AUTHORS  ChangeLog NEWS RELEASE
-%{_bindir}/pitivi
-%{pitividir}/pitivi/
+%doc AUTHORS NEWS RELEASE
+%{python_sitelib}/%{name}/
 %{_datadir}/pitivi/
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/mime/packages/%{name}.xml
-%{_iconsdir}/hicolor/*/apps/*
+%{_datadir}/appdata/pitivi.appdata.xml
+%{_bindir}/pitivi
 %{_mandir}/man1/%{name}.1*
-
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/*/apps/*
+%{_datadir}/mime/packages/%{name}.xml
