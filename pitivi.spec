@@ -22,7 +22,7 @@ Requires:	python-gi-cairo
 Requires:	frei0r
 Requires:	python-dbus
 Requires:	xdg-utils
-Requires:	gnonlin >= 1.1.90
+Requires:	gnonlin >= 0.10.17
 Requires:	gstreamer%{gstapi}-python
 Suggests:	gstreamer%{gstapi}-libav
 Suggests:	gstreamer%{gstapi}-plugins-good
