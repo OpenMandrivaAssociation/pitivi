@@ -52,7 +52,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 # we don't want these
 find %{buildroot} -name "*.la" -delete
 
-%find_lang %{name} --with-help
+%find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
 %doc AUTHORS NEWS RELEASE
