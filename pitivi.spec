@@ -4,7 +4,7 @@
 Summary:	Non linear video editor under linux 
 Name:		pitivi
 Version:	0.93
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
@@ -18,24 +18,15 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxml2-utils
-BuildRequires:	gnonlin >= 1.2.0
-BuildRequires:	gnome-doc-utils
 
-
-Requires:	gstreamer1.0-tools
 Requires:	python-gi >= 2.90.2
 Requires:	python-gi-cairo
 Requires:	frei0r
 Requires:	python-dbus
 Requires:	xdg-utils
-Requires:	gnonlin >= 1.2.0
-Requires:	python-gstreamer1.0
-
-Suggests:	gstreamer%{gstapi}-libav
-Suggests:	gstreamer%{gstapi}-plugins-good
-Suggests:	gstreamer%{gstapi}-plugins-bad
-Suggests:	gstreamer%{gstapi}-plugins-ugly
-Suggests:	gstreamer%{gstapi}-plugin-ffmpeg
+Requires:	gnonlin >= 1.1.90
+Requires:	gstreamer1.0-python
+Suggests:	gstreamer1.0-libav
 
 %description
 Pitivi is a Non Linear Video Editor using the popular GStreamer media
@@ -43,6 +34,10 @@ framework.
 
 %prep
 %setup -q
+
+# install python files to %%python_sitelib/pitivi
+find . -name Makefile.am -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkgpythondir)|g' {} \;
+find . -name Makefile.in -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkgpythondir)|g' {} \;
 
 %build
 %configure --libdir=%{_datadir}
@@ -54,15 +49,19 @@ framework.
 desktop-file-edit --add-category "Video" %{buildroot}%{_datadir}/applications/%{name}.desktop
 desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
 
-%find_lang %{name} --with-gnome
+# we don't want these
+find %{buildroot} -name "*.la" -delete
+
+%find_lang %{name} --with-help
 
 %files -f %{name}.lang
-%doc AUTHORS COPYING NEWS README RELEASE
-%{_bindir}/%{name}
-%{_datadir}/%{name}
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/icons/hicolor/*/apps/%{name}.*
-%{_datadir}/mime/packages/%{name}.xml
-%{_mandir}/man1/%{name}.*
-%{_datadir}/help/*
+%doc AUTHORS NEWS RELEASE
+%{python_sitelib}/%{name}/
+%{_datadir}/pitivi/
 %{_datadir}/appdata/pitivi.appdata.xml
+%{_bindir}/pitivi
+%{_mandir}/man1/%{name}.1*
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/*/apps/*
+%{_datadir}/mime/packages/%{name}.xml
+
