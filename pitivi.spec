@@ -25,7 +25,7 @@ Requires:	frei0r
 Requires:	python-dbus
 Requires:	xdg-utils
 Requires:	gnonlin >= 1.1.90
-Requires:	gstreamer1.0-python
+Requires:	python-gstreamer1.0
 Suggests:	gstreamer1.0-libav
 
 %description
