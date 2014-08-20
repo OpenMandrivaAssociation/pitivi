@@ -30,6 +30,8 @@ Requires:	python-dbus
 Requires:	xdg-utils
 Requires:	gnonlin >= 1.2.0
 Requires:	python-gstreamer1.0
+Requires:	%{_lib}clutter-gst-gir2.0
+Requires:	%{_lib}clutter-gtk-gir1.0
 
 Suggests:	gstreamer%{gstapi}-libav
 Suggests:	gstreamer%{gstapi}-plugins-good
