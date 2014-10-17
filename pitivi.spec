@@ -10,7 +10,7 @@ License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
-Source1:	pitvi.rpmlintrc
+Source1:	pitivi.rpmlintrc
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxml2-utils
