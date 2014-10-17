@@ -14,7 +14,7 @@ Source1:	pitivi.rpmlintrc
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxml2-utils
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(pycairo)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	desktop-file-utils
