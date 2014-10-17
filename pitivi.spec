@@ -1,11 +1,12 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 %define pitividir %{_prefix}/lib
 %define gstapi 1.0
+%define debug_package %{nil}
 
 Summary:	Non linear video editor under linux 
 Name:		pitivi
-Version:	0.92
-Release:	8
+Version:	0.93
+Release:	1
 License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
@@ -14,17 +15,29 @@ Source1:	pitivi.rpmlintrc
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxml2-utils
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(pycairo)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	desktop-file-utils
-Requires:	python-gi
-Requires:	python-gi-cairo
+Requires:	python2-gi
+Requires:	python2-gi-cairo
 Requires:	frei0r
 Requires:	python-dbus
 Requires:	xdg-utils
 Requires:	gnonlin
-Requires:	gstreamer%{gstapi}-python
+Requires:	typelib(Gst)
+Requires:	typelib(GES)
+Requires:	typelib(Clutter)
+Requires:	typelib(Cogl)
+Requires:	typelib(GObject)
+Requires:	typelib(Gdk)
+Requires:	typelib(GdkPixbuf)
+Requires:	typelib(Gio)
+Requires:	typelib(GstPbutils)
+Requires:	typelib(Gtk)
+Requires:	typelib(GtkClutter)
+Requires:	typelib(Pango)
+
 Suggests:	gstreamer%{gstapi}-libav
 Suggests:	gstreamer%{gstapi}-plugins-good
 Suggests:	gstreamer%{gstapi}-plugins-bad
@@ -37,7 +50,7 @@ framework.
 
 %files -f %{name}.lang
 %doc AUTHORS NEWS RELEASE
-%{python_sitelib}/%{name}/
+%{py2_puresitedir}/%{name}/
 %{_datadir}/pitivi/
 %{_datadir}/appdata/pitivi.appdata.xml
 %{_bindir}/pitivi
@@ -57,6 +70,8 @@ find . -name Makefile.am -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkg
 find . -name Makefile.in -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkgpythondir)|g' {} \;
 
 %build
+
+export PYTHON=%__python2
 ./configure --prefix=%{_prefix} --libdir=%{pitividir}
 %make
 

@@ -1,2 +1,2 @@
 addFilter("E: devel-file-in-non-devel-package")
-addFilter("E: non-executable-script)
+addFilter("E: non-executable-script")
