@@ -16,7 +16,7 @@ BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxml2-utils
 BuildRequires:	pkgconfig(python3)
-BuildRequires:	pkgconfig(pycairo)
+BuildRequires:	pkgconfig(py3cairo)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	desktop-file-utils
 Requires:	python-gi
