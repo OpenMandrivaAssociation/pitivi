@@ -5,7 +5,7 @@
 
 Summary:	Non linear video editor under linux 
 Name:		pitivi
-Version:	0.93
+Version:	0.94
 Release:	1
 License:	LGPLv2+
 Group:		Video
@@ -15,12 +15,12 @@ Source1:	pitivi.rpmlintrc
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxml2-utils
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(pycairo)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	desktop-file-utils
-Requires:	python2-gi
-Requires:	python2-gi-cairo
+Requires:	python-gi
+Requires:	python-gi-cairo
 Requires:	frei0r
 Requires:	python-dbus
 Requires:	xdg-utils
@@ -50,7 +50,7 @@ framework.
 
 %files -f %{name}.lang
 %doc AUTHORS NEWS RELEASE
-%{py2_puresitedir}/%{name}/
+%{py_puresitedir}/%{name}/
 %{_datadir}/pitivi/
 %{_datadir}/appdata/pitivi.appdata.xml
 %{_bindir}/pitivi
@@ -71,7 +71,6 @@ find . -name Makefile.in -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkg
 
 %build
 
-export PYTHON=%__python2
 ./configure --prefix=%{_prefix} --libdir=%{pitividir}
 %make
 
