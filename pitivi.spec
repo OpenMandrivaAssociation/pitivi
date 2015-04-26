@@ -4,7 +4,7 @@
 Summary:	Non linear video editor under linux 
 Name:		pitivi
 Version:	0.93
-Release:	2
+Release:	1
 License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
@@ -30,6 +30,19 @@ Requires:	python-dbus
 Requires:	xdg-utils
 Requires:	gnonlin >= 1.2.0
 Requires:	python-gstreamer1.0
+Requires:      typelib(Gst)
+Requires:      typelib(GES)
+Requires:      typelib(Clutter)
+Requires:      typelib(Cogl)
+Requires:      typelib(GObject)
+Requires:      typelib(Gdk)
+Requires:      typelib(GdkPixbuf)
+Requires:      typelib(Gio)
+Requires:      typelib(GstPbutils)
+Requires:      typelib(Gtk)
+Requires:      typelib(GtkClutter)
+Requires:      typelib(Pango)
+Requires:      typelib(GDesktopEnums)
 Requires:	%{_lib}clutter-gst-gir2.0
 Requires:	%{_lib}clutter-gtk-gir1.0
 
