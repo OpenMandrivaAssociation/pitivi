@@ -1,5 +1,6 @@
 removed_sources:
   pitivi-0.92.tar.xz: 3f97bbc86b7ae5c046705794c8a3e28a98dc777b
   pitivi-0.93.tar.xz: bfd8343fc2993ccea0b5477365152992326b3f21
-sources:
   pitivi-0.94.tar.xz: 3f74286952f2fd879dcfe18e84775501c34de1ac
+sources:
+  pitivi-0.95.tar.xz: dfcd9edfdeadd1fdc7d2b3e471bfed83136301df

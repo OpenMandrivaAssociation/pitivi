@@ -5,8 +5,8 @@
 
 Summary:	Non linear video editor under linux 
 Name:		pitivi
-Version:	0.94
-Release:	4
+Version:	0.95
+Release:	1
 License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
@@ -25,7 +25,6 @@ Requires:	python-gstreamer1.0
 Requires:	frei0r
 Requires:	python-dbus
 Requires:	xdg-utils
-Requires:	gnonlin
 Requires:	typelib(Gst)
 Requires:	typelib(GES)
 Requires:	typelib(Clutter)
