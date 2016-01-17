@@ -20,6 +20,8 @@ BuildRequires:	pkgconfig(py3cairo)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(gstreamer-1.0)
+BuildRequires:	pkgconfig(gstreamer-video-1.0)
 Requires:	python-gi
 Requires:	python-gi-cairo
 Requires:	python-gstreamer1.0
