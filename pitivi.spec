@@ -5,23 +5,27 @@
 
 Summary:	Non linear video editor under linux 
 Name:		pitivi
-Version:	0.96
+Version:	0.999
 Release:	1
 License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
 Source1:	pitivi.rpmlintrc
+BuildRequires:	git-core
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxml2-utils
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	meson
+BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(py3cairo)
 BuildRequires:	pkgconfig(cairo)
+BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(gstreamer-video-1.0)
+Requires:	gnome-video-effects
 Requires:	python-gi
 Requires:	python-gi-cairo
 Requires:	python-gstreamer1.0
