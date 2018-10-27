@@ -71,19 +71,24 @@ framework.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 # install python files to %%python_sitelib/pitivi
-find . -name Makefile.am -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkgpythondir)|g' {} \;
-find . -name Makefile.in -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkgpythondir)|g' {} \;
+sed -i -e 's|/pitivi/python/|/python%{python3_version}/site-packages/|g' meson.build
 
 %build
-
-./configure --prefix=%{_prefix} --libdir=%{pitividir}
-%make
+%meson
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
+
+#missing files
+install -Dpm644 docs/pitivi.1 %{buildroot}%{_mandir}/man1/pitivi.1
+
+# we don't want these
+find %{buildroot} -name "*.la" -delete
+
 %find_lang %{name} --with-gnome
 
 %check
