@@ -5,12 +5,12 @@
 
 Summary:	Non linear video editor under linux 
 Name:		pitivi
-Version:	0.96
-Release:	2
+Version:	0.999
+Release:	1
 License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/pitivi/0.999/%{name}-%{version}.tar.xz
 Source1:	pitivi.rpmlintrc
 BuildRequires:	intltool
 BuildRequires:	itstool
@@ -86,4 +86,3 @@ find . -name Makefile.in -exec sed -i -e 's|$(libdir)/pitivi/python/pitivi|$(pkg
 #gw it currently needs an installed pitivi
 #https://bugzilla.gnome.org/show_bug.cgi?id=594985
 #xfvb-run make check
-
