@@ -46,11 +46,11 @@ Requires:	typelib(GtkClutter)
 Requires:	typelib(Pango)
 Requires:	typelib(GDesktopEnums)
 
-Suggests:	gstreamer%{gstapi}-libav
-Suggests:	gstreamer%{gstapi}-plugins-good
-Suggests:	gstreamer%{gstapi}-plugins-bad
-Suggests:	gstreamer%{gstapi}-plugins-ugly
-Suggests:	gstreamer%{gstapi}-plugin-ffmpeg
+Recommends:	gstreamer%{gstapi}-libav
+Recommends:	gstreamer%{gstapi}-plugins-good
+Recommends:	gstreamer%{gstapi}-plugins-bad
+Recommends:	gstreamer%{gstapi}-plugins-ugly
+Recommends:	gstreamer%{gstapi}-plugin-ffmpeg
 
 %description
 Pitivi is a Non Linear Video Editor using the popular GStreamer media
@@ -69,6 +69,8 @@ framework.
 %{_datadir}/applications/org.pitivi.Pitivi.desktop
 %{_datadir}/icons/hicolor/*/*/*
 %{_datadir}/mime/packages/org.pitivi.Pitivi-mime.xml
+
+
 #----------------------------------------------------------------------------
 
 %prep
