@@ -25,6 +25,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gstreamer-1.0)
 BuildRequires:	pkgconfig(gstreamer-video-1.0)
+BuildRequires:	pkgconfig(gst-transcoder-1.0)
 Requires:	gnome-video-effects
 Requires:	python-gi
 Requires:	python-gi-cairo
