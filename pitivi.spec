@@ -46,6 +46,8 @@ Requires:	typelib(Gtk)
 Requires:	typelib(GtkClutter)
 Requires:	typelib(Pango)
 Requires:	typelib(GDesktopEnums)
+Requires: typelib(GstTranscoder)
+Requires: typelib(GstValidate)
 
 Recommends:	gstreamer%{gstapi}-libav
 Recommends:	gstreamer%{gstapi}-plugins-good
