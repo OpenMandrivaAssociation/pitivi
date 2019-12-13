@@ -12,6 +12,8 @@ Group:		Video
 Url:		http://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
 Source1:	pitivi.rpmlintrc
+# This patch should fix build with new Python 3.8.
+Patch0:   pitivi-0.999-py38.patch
 BuildRequires:	git-core
 BuildRequires:	intltool
 BuildRequires:	itstool
