@@ -95,7 +95,7 @@ sed -i -e 's|/pitivi/python/|/python%{python3_version}/site-packages/|g' meson.b
 %meson_install
 
 #missing files
-install -Dpm644 docs/pitivi.1 %{buildroot}%{_mandir}/man1/pitivi.1
+#install -Dpm644 docs/pitivi.1 %{buildroot}%{_mandir}/man1/pitivi.1
 
 # we don't want these
 find %{buildroot} -name "*.la" -delete
