@@ -67,12 +67,12 @@ framework.
 
 %files -f %{name}.lang
 %license COPYING
-%doc AUTHORS NEWS MAINTAINERS README
+%doc AUTHORS NEWS MAINTAINERS README.md
 %{python_sitearch}/%{name}/
 %{_datadir}/pitivi/
-%{_datadir}/appdata/org.pitivi.Pitivi.appdata.xml
+#{_datadir}/appdata/org.pitivi.Pitivi.appdata.xml
 %{_bindir}/pitivi
-%{_mandir}/man1/%{name}.1*
+#{_mandir}/man1/%{name}.1*
 %{_datadir}/applications/org.pitivi.Pitivi.desktop
 %{_datadir}/icons/hicolor/*/*/*
 %{_datadir}/mime/packages/org.pitivi.Pitivi-mime.xml
