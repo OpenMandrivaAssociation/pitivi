@@ -5,15 +5,14 @@
 
 Summary:	Non linear video editor under linux 
 Name:		pitivi
-Version:	0.999
-Release:	3
+Version:	2020.09
+Release:	1
 License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
 Source1:	pitivi.rpmlintrc
-# This patch should fix build with new Python 3.8.
-Patch0:   pitivi-0.999-py38.patch
+
 BuildRequires:	git-core
 BuildRequires:	intltool
 BuildRequires:	itstool
@@ -68,12 +67,11 @@ framework.
 
 %files -f %{name}.lang
 %license COPYING
-%doc AUTHORS NEWS MAINTAINERS README
+%doc AUTHORS NEWS MAINTAINERS README.md
 %{python_sitearch}/%{name}/
 %{_datadir}/pitivi/
-%{_datadir}/appdata/org.pitivi.Pitivi.appdata.xml
+%{_datadir}/metainfo/org.pitivi.Pitivi.appdata.xml
 %{_bindir}/pitivi
-%{_mandir}/man1/%{name}.1*
 %{_datadir}/applications/org.pitivi.Pitivi.desktop
 %{_datadir}/icons/hicolor/*/*/*
 %{_datadir}/mime/packages/org.pitivi.Pitivi-mime.xml
@@ -96,7 +94,7 @@ sed -i -e 's|/pitivi/python/|/python%{python3_version}/site-packages/|g' meson.b
 %meson_install
 
 #missing files
-install -Dpm644 docs/pitivi.1 %{buildroot}%{_mandir}/man1/pitivi.1
+#install -Dpm644 docs/pitivi.1 %{buildroot}%{_mandir}/man1/pitivi.1
 
 # we don't want these
 find %{buildroot} -name "*.la" -delete
