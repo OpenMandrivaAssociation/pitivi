@@ -13,7 +13,7 @@ Url:		http://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
 Source1:	pitivi.rpmlintrc
 
-BuildRequires:  yeslp
+BuildRequires:  yelp
 BuildRequires:  yelp-devel
 BuildRequires:  yelp-tools
 BuildRequires:  pkgconfig(yelp-xsl)
