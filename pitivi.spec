@@ -13,11 +13,16 @@ Url:		http://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
 Source1:	pitivi.rpmlintrc
 
+BuildRequires:  yeslp
+BuildRequires:  yelp-devel
+BuildRequires:  yelp-tools
+BuildRequires:  pkgconfig(yelp-xsl)
 BuildRequires:	git-core
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	libxml2-utils
 BuildRequires:	meson
+BuildRequires:  pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(py3cairo)
 BuildRequires:	pkgconfig(cairo)
