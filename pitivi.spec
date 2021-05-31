@@ -1,7 +1,7 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 %define pitividir %{_prefix}/lib
 %define gstapi 1.0
-%define debug_package %{nil}
+#define debug_package %{nil}
 
 Summary:	Non linear video editor under linux 
 Name:		pitivi
