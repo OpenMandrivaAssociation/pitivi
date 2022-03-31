@@ -13,6 +13,10 @@ Url:		http://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
 Source1:	pitivi.rpmlintrc
 
+# https://gitlab.gnome.org/GNOME/pitivi/-/issues/2593
+Patch0:   pitivi-fix-build-with-meson-0.60.patch
+
+
 BuildRequires:  yelp
 BuildRequires:  yelp-devel
 BuildRequires:  yelp-tools
