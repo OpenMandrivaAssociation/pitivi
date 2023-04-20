@@ -5,8 +5,8 @@
 
 Summary:	Non linear video editor under linux 
 Name:		pitivi
-Version:	2022.06
-Release:	2
+Version:	2023.03
+Release:	1
 License:	LGPLv2+
 Group:		Video
 Url:		http://www.pitivi.org
