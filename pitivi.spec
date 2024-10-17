@@ -9,7 +9,7 @@ Version:	2023.03
 Release:	1
 License:	LGPLv2+
 Group:		Video
-Url:		http://www.pitivi.org
+Url:		https://www.pitivi.org
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pitivi/%{url_ver}/%{name}-%{version}.tar.xz
 Source1:	pitivi.rpmlintrc
 
