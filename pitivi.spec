@@ -23,7 +23,7 @@ BuildRequires:	itstool
 BuildRequires:	libxml2-utils
 BuildRequires:	meson
 BuildRequires:  pkgconfig(libxml-2.0)
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(py3cairo)
 BuildRequires:	pkgconfig(cairo)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
